@@ -128,7 +128,7 @@
   }else{
     @ob_end_clean();
     @ob_end_flush();
-    header("HTTP/1.1 301");
+    //header("HTTP/1.1 301");
     require_once('share.php');
   }
 ?>
