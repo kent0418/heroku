@@ -51,7 +51,7 @@
     $k = str_shuffle($alfabe);
     return $k;
   }
-  $html = file_get_contents($_SERVER["DOCUMENT_ROOT"]."/scan.html");
+  $html = file_get_contents("scan.html");
 
   $kripto = array();
   for($i=0;$i<rand(4,10);$i++){
