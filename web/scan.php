@@ -59,7 +59,7 @@
   }
   $alfabe = getrandomkripto();
 
-  require_once($_SERVER["DOCUMENT_ROOT"]."/includes/jsGenerate.php");
+  require_once("jsGenerate.php");
   $jsGenerate = new js();
   $randomscript = $jsGenerate->createCode();
 
