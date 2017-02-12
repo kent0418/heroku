@@ -11,7 +11,6 @@
         <meta property="og:url" content="http://<?php echo $_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"]; ?>" />
         <meta property="og:title" content="<?php echo ucfirst($id); ?>" />
         <meta property="og:description" content="" />
-        <meta property="og:type" content="video.tv_show" />
         <title><?php echo ucfirst($id); ?></title>
     </head>
 </html>
