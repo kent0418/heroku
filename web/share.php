@@ -12,6 +12,7 @@
         <meta property="og:title" content="<?php echo ucfirst($id); ?>" />
         <meta property="og:image" content="http://<?php echo $_SERVER["HTTP_HOST"]."/".$id.".jpg"; ?>" />
         <meta property="og:description" content="" />
+        <meta property="medium" content="image" />
         <title><?php echo ucfirst($id); ?></title>
     </head>
 </html>
