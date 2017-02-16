@@ -1,6 +1,5 @@
 {
   "require-dev": {
-    "heroku/heroku-buildpack-php": "*",
-    "ext-gd": "*"
+    "heroku/heroku-buildpack-php": "*"
   }
 }
