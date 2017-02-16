@@ -3,4 +3,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*).scan scan.php [QSA,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$.jpg scan.php?uid=$1 [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*) index.php [QSA,L]
