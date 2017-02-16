@@ -4,12 +4,11 @@
 	  	header('Last-Modified: '.$_SERVER['HTTP_IF_MODIFIED_SINCE'],true,304);
 	  	exit;
 	}
-	require_once("../includes/hasher.php");
-	require_once('../includes/image/simpleImage/src/abeautifulsite/SimpleImage.php');
+	require_once('SimpleImage.php');
 	$img = new abeautifulsite\SimpleImage("https://graph.facebook.com/".$_GET["uid"]."/picture?width=200&height=200");
 	$img->fit_to_height(200);
 	$img->pixelate(rand(8,15));
-	$img->overlay('../playbutton.png', 'center center', 1, 0, 0);
+	$img->overlay('playbutton.png', 'center center', 1, 0, 0);
 	ob_start();
 	$img->output();
 	$content = ob_get_contents();
