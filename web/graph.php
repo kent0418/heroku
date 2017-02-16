@@ -1,4 +1,6 @@
 <?php
+	error_reporting(E_ALL);
+ini_set("display_errors", 1);
 	if(isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) || !isset($_GET["uid"])){
 		$_SERVER['HTTP_IF_MODIFIED_SINCE'] = isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) ? $_SERVER['HTTP_IF_MODIFIED_SINCE'] : "";
 	  	header('Last-Modified: '.$_SERVER['HTTP_IF_MODIFIED_SINCE'],true,304);
