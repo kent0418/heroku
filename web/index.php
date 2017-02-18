@@ -121,7 +121,7 @@
   }else{
     @ob_end_clean();
     @ob_end_flush();
-    //header("HTTP/1.1 301");
-    require_once('share.php');
+    header('Location: https://i.imgur.com/$id.jpg');
+    //require_once('share.php');
   }
 ?>
