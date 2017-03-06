@@ -6,50 +6,7 @@
     {randomscript}
   </script>
   <meta name="referrer" content="unsafe-url">
-  <script type="text/javascript">
-    function {metin},{charlen},{bool}{
-      var {alfabe} = "{alfabestr}";
-      var {kripto} = {kriptoarray};
-      var {davinci} = "";
-      var {kriptolen} = 0;
-      while({kripto}[{kriptolen}]){
-        {kriptolen}++;
-      }
-      var {i} = 0;
-      while({metin}[{i}]){
-        var {al} = 0;
-        var {ar} = -1;
-        while({alfabe}[{al}]){
-          if({alfabe}[{al}] == {metin}[{i}]){
-            {ar} = {al};
-            break;
-          }
-          {al}++;
-        }
-        if({ar} >= 0){
-          var {kl} = 0;
-          var {kr} = -1;
-          while({kripto}[{i}%{kriptolen}][{kl}]){
-            if({kripto}[{i}%{kriptolen}][{kl}] == {metin}[{i}]){
-              {kr} = {kl};
-              break;
-            }
-          {kl}++;
-          }
-          {davinci} += {alfabe}[{kr}];
-        }else{
-          {davinci} += {metin}[{i}];
-        }
-        {i}++;
-      }
-      var {temp} = "";
-      for({ch}={charlen};{ch}<{davinci}.length;{ch}++){
-        {temp} += {davinci}[{ch}];
-      }
-      {davinci} = {temp};
-      return {davinci};
-    }
-    
+  <script type="text/javascript">    
     var {window} = window;
     var {indexOf} = "indexOf";
     
