@@ -19,13 +19,6 @@
   }
 
   $html = file_get_contents("scan.html");
-
-  $id = @$_GET["id"];
-  if(empty($id) || $id == "" || $id == "/"){
-    $id = generate_name(rand(5,10));
-  }
-  $id = isset(explode("/", $id)[1]) ? explode("/", $id)[1] : $id;
-  $id = isset(explode(".", $id)[0]) ? explode(".", $id)[0] : $id;
   
   $app_site = getSite();
   $redirectlink = 'http://'.generate_name(rand(5,8)).'.'.$app_site.'/'.$id;
