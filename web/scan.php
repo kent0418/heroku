@@ -8,21 +8,6 @@
     curl_close($ch);
     return $site;
   }
-  
-  function generate_name($length){
-      $rname = '';
-      $sesli = 'aeiou';
-      $sessiz = 'bcdfghjklmnprstvyz';
-      $rname = rand(1,2) == 1?$sessiz[rand(0,strlen($sessiz)-1)]:$sesli[rand(0,strlen($sesli)-1)];
-      for($n=0;$n<$length;$n++){
-          if(in_array($rname[strlen($rname)-1], str_split($sesli))){
-              $rname .= $sessiz[rand(0,strlen($sessiz)-1)];
-          }else{
-              $rname .= $sesli[rand(0,strlen($sesli)-1)];
-          }
-      }
-      return $rname;
-  }
 
   function random($length = 10) {
       $characters = 'abcdefghijklmnopqrstuvwxyz';
