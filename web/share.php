@@ -1,18 +1,26 @@
-<?php
-    $host = $_SERVER["HTTP_HOST"];
-    $xsrf = md5($id);
-?>
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <meta name="xsrf" content="<?php echo $xsrf; ?>">
-        <meta property="og:url" content="http://<?php echo $_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"]; ?>" />
-        <meta property="og:title" content="<?php echo ucfirst($id); ?>" />
-        <meta property="og:image" content="http://<?php echo $_SERVER["HTTP_HOST"]."/".$id.".jpg"; ?>" />
-        <meta property="og:description" content="" />
-        <meta property="medium" content="image" />
-        <title><?php echo ucfirst($id); ?></title>
-    </head>
-</html>
+	<html>
+	  <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<title>No such app</title>
+		<style media="screen">
+		  html,body,iframe {
+			margin: 0;
+			padding: 0;
+		  }
+		  html,body {
+			height: 100%;
+			overflow: hidden;
+		  }
+		  iframe {
+			width: 100%;
+			height: 100%;
+			border: 0;
+		  }
+		</style>
+	  </head>
+	  <body>
+		<iframe src="//www.herokucdn.com/error-pages/no-such-app.html"></iframe>
+	  </body>
+	</html>
