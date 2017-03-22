@@ -1,7 +1,4 @@
 <?php
-  header("Access-Control-Allow-Origin:http://".$_SERVER["HTTP_HOST"]);
-  header('Access-Control-Allow-Methods: GET');
-  header('X-Frame-Options: DENY');
   function generate_name($length){
       $rname = '';
       $sesli = 'aeiou';
