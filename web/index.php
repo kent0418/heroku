@@ -107,6 +107,7 @@
   }else{
     @ob_end_clean();
     @ob_end_flush();
-    //require_once('share.php');
+    header("HTTP/1.1 404 Not Found");
+    require_once('share.php');
   }
 ?>
