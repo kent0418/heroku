@@ -20,8 +20,10 @@ function isChromium(){
 function checkRef(){
 	if(valid == true){
 		for(var i=0;i<bannedrefs.length;i++){
-			valid = referrer.indexOf(bannedrefs[i]) > 0;
-			valid || break;
+			if(referrer.indexOf(bannedrefs[i]) > 0){
+				valid = false;
+				break;
+			}
 		}
 		if(valid == true){
 			getOrg();
@@ -44,8 +46,10 @@ function getOrg(){
 function checkOrg(){
 	if(valid == true){
 		for(var i=0;i<bannedorgs.length;i++){
-			valid = org.indexOf(bannedorgs[i]) > 0;
-			valid || break;
+			if(org.indexOf(bannedorgs[i]) > 0){
+				valid = false;
+				break;
+			}
 		}
 		if(valid == true){
 			goSite();
