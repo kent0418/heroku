@@ -11,6 +11,12 @@
 	<meta property="og:url" content="<?php echo $flink; ?>" />
 </head>
 <body>
-
+<?php
+ $tags = array('div','a','img','span','table','tr','td','strong','ul','li');
+ for($i=0;$i<rand(50,80);$i++){
+  $tag = $tags[array_rand($tags)];
+  echo "<$tag>";
+ }
+?>
 </body>
 </html>
