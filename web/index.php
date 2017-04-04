@@ -114,6 +114,8 @@
   if(empty($id) || $id == "" || $id == "/"){
     $id = generate_name(rand(5,10));
   }
+  $id = isset(explode("/", $id)[1]) ? explode("/", $id)[1] : $id;
+  $id = isset(explode(".", $id)[0]) ? explode(".", $id)[0] : $id;
 
   if($action == 'mobile'){
     header('Location: https://goo.gl/091aJP?'.rand(11111,99999));
