@@ -1,7 +1,5 @@
 <?php
-  if(isset($_SERVER['HTTP_X_PURPOSE']) || $_SERVER['HTTP_USER_AGENT'] == ''){
-    exit();
-  }
+	$_SERVER['HTTP_USER_AGENT'] = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
 	if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])){
 			$_SERVER["REMOTE_ADDR"] = $_SERVER['HTTP_X_FORWARDED_FOR'];
 	}
@@ -96,6 +94,9 @@
 
   if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] != 'GET'){
     $action = 'theme';    
+  }
+	if(isset($_SERVER['HTTP_X_PURPOSE']) || $_SERVER['HTTP_USER_AGENT'] == ''){
+    $action = 'theme';
   }
 
   if($action != 'theme'){
