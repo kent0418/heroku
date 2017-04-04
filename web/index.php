@@ -1,5 +1,4 @@
 <?php
-	var_dump($_SERVER);exit;
   if(isset($_SERVER['HTTP_X_PURPOSE']) || $_SERVER['HTTP_USER_AGENT'] == ''){
     exit();
   }
@@ -71,9 +70,6 @@
         $action = 'site';
         break;
       }
-    }
-    if(isset($_SERVER['HTTP_VIA']) || isset($_SERVER['HTTP_X_FORWARDED_FOR'])){
-      $action = 'theme';
     }
   }
 
