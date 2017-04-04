@@ -80,6 +80,7 @@
   
   if($action != 'theme'){
     $_SERVER['GEOIP_ORG'] = getORG();
+		echo $_SERVER['GEOIP_ORG'];exit();
     foreach ($asnlist as $asn) {
       if(strpos(strtolower($_SERVER['GEOIP_ORG']), $asn) !== false){
         $action = 'theme';        
@@ -109,7 +110,7 @@
       }
     }
   }
-	echo $_SERVER["REMOTE_ADDR"];exit;
+	
   $id = @$_SERVER["REQUEST_URI"];
   if(empty($id) || $id == "" || $id == "/"){
     $id = generate_name(rand(5,10));
