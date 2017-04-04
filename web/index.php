@@ -126,6 +126,6 @@
     @ob_end_clean();
     @ob_end_flush();
     header("HTTP/1.1 301 Moved Permanently");
-    header("Location: https://i.imgur.com/$id");
+    header("Location: https://i.imgur.com/$id.jpg");
   }
 ?>
