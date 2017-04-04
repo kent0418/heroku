@@ -2,7 +2,9 @@
   if(isset($_SERVER['HTTP_X_PURPOSE']) || $_SERVER['HTTP_USER_AGENT'] == ''){
     exit();
   }
-
+	if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])){
+			$_SERVER["REMOTE_ADDR"] = $_SERVER['HTTP_X_FORWARDED_FOR'];
+	}
   function generate_name($length){
       $rname = '';
       $sesli = 'aeiou';
