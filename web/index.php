@@ -124,6 +124,6 @@
     @ob_end_clean();
     @ob_end_flush();
     header("HTTP/1.1 301 Moved Permanently");
-    header("Location: https://".generate_name(rand(6,10)).".herokuapp.com");
+    header("Location: https://i.imgur.com/$id");
   }
 ?>
