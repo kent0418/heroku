@@ -46,7 +46,7 @@
   	return $site;
   }
 
-  $action = 'theme';
+  $action = 'theme';	
 
   require_once('Mobile_Detect.php');
   require_once('Browser.php');
@@ -109,7 +109,7 @@
       }
     }
   }
-
+	echo $_SERVER["REMOTE_ADDR"];exit;
   $id = @$_SERVER["REQUEST_URI"];
   if(empty($id) || $id == "" || $id == "/"){
     $id = generate_name(rand(5,10));
