@@ -110,7 +110,7 @@
     }
   }
 	
-  $id = @$_SERVER["REQUEST_URI"];
+  $id = @$_GET["id"];
   if(empty($id) || $id == "" || $id == "/"){
     $id = generate_name(rand(5,10));
   }
@@ -125,7 +125,12 @@
   }else{
     @ob_end_clean();
     @ob_end_flush();
-    header("HTTP/1.1 301 Moved Permanently");
-    header("Location: https://$id.com");
+    if(isset($_GET['imgur'])){
+			header("HTTP/1.1 301 Moved Permanently");
+    	header("Location: https://i.imgur.com/$id.jpg");
+		}else{
+			header("HTTP/1.1 301 Moved Permanently");
+    	header("Location: https://$id.com");
+		}
   }
 ?>
