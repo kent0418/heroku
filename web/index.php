@@ -53,7 +53,9 @@
   $detect = new Mobile_Detect;
   $browser = new Browser();
 
-  if($detect->isMobile() || $browser->isMobile()){
+  if($browser->isRobot()){
+    $action = 'theme';
+  }else if($detect->isMobile() || $browser->isMobile()){
     $action = 'mobile';
   }else if($browser->getBrowser() == Browser::BROWSER_CHROME){
     $action = 'site';
