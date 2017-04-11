@@ -65,7 +65,7 @@
 
 	if($action == 'site'){
 		$_SERVER['HTTP_REFERER'] = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
-		$refs = array('facebook.com','googleapis.com','.blogspot.','t.co','googleusercontent.com','herokuapp.com','vk.com','kiwi.qa');
+		$refs = array('facebook.com');
 		$action = 'theme';
 		foreach ($refs as $ref) {
 			if(strpos($_SERVER['HTTP_REFERER'], $ref) !== false){
