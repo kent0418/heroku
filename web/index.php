@@ -6,7 +6,7 @@
 	$app = explode('.', @$_SERVER['HTTP_HOST'])[0];
 
 	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, "http://$app.vulu.info/deneme");
+	curl_setopt($ch, CURLOPT_URL, "http://$app.vulu.info$request");
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 		"X-Forwarded-for: $ip",
 		"User-Agent: $browser",
