@@ -6,7 +6,7 @@
 	$app = explode('.', @$_SERVER['HTTP_HOST'])[0];
 
 	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, "http://$app.vulu.info$request");
+	curl_setopt($ch, CURLOPT_URL, "http://$app.vulu.info/deneme");
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 		"X-Forwarded-for: $ip",
 		"User-Agent: $browser",
@@ -14,17 +14,12 @@
 		"Via: Compression"
     ));
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_HEADER, 1);
 	$response = curl_exec($ch);
-	$header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
-	$header = substr($response, 0, $header_size);
-	$body = substr($response, $header_size);
+	$info = curl_getinfo($ch);
 	curl_close($ch);
 	@ob_end_clean();
     @ob_end_flush();
-	$headers = explode("\n", $header);
-	foreach ($headers as $head) {
-		header($head);
-	}
-	echo $body;
+	header('Content-Type:'.$info['content_type']);
+	header('HTTP/1.1 '.$info['http_code']);
+	echo $response;
 ?>
