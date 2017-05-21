@@ -1,5 +1,3 @@
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)\.jpg$ index.php?id=$1&imgur=yes [L]
-RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$ index.php?id=$1 [L]
